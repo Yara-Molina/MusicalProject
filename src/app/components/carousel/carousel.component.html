@@ -1,0 +1,28 @@
+
+<mat-card class="carousel">
+  <div class="title_carousel">
+  <h2>Presentaciones</h2>
+ </div>
+  <div class="carousel-wrapper">
+    <button mat-icon-button class="nav-btn prev" (click)="prevSlide()">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+
+    <div class="carousel-content">
+      <div class="carousel-grid">
+        <div class="carousel-item" *ngFor="let image of getVisibleImages()">
+          <div class="image-container">
+            <img [src]="image.thumbnail" alt="Presentation Image">
+            <a href="{{image.url}}" target="_blank" class="play-icon">
+              <mat-icon>play_arrow</mat-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button mat-icon-button class="nav-btn next" (click)="nextSlide()">
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+  </div>
+</mat-card>
